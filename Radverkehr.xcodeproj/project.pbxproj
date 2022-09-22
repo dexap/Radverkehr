@@ -7,18 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B590C45628DC81CD00804A82 /* RadverkehrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C45528DC81CD00804A82 /* RadverkehrApp.swift */; };
-		B590C45828DC81CD00804A82 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C45728DC81CD00804A82 /* ContentView.swift */; };
 		B590C45A28DC81D000804A82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B590C45928DC81D000804A82 /* Assets.xcassets */; };
 		B590C45D28DC81D000804A82 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B590C45C28DC81D000804A82 /* Preview Assets.xcassets */; };
+		B590C47428DC97AC00804A82 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47128DC97AC00804A82 /* ContentView.swift */; };
+		B590C47528DC97AC00804A82 /* RadverkehrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47228DC97AC00804A82 /* RadverkehrApp.swift */; };
+		B590C47628DC97AC00804A82 /* Frontpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47328DC97AC00804A82 /* Frontpage.swift */; };
+		B590C47828DC97C400804A82 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47728DC97C400804A82 /* WebView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		B590C45228DC81CD00804A82 /* Radverkehr.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Radverkehr.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		B590C45528DC81CD00804A82 /* RadverkehrApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadverkehrApp.swift; sourceTree = "<group>"; };
-		B590C45728DC81CD00804A82 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		B590C45928DC81D000804A82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B590C45C28DC81D000804A82 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		B590C47128DC97AC00804A82 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		B590C47228DC97AC00804A82 /* RadverkehrApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadverkehrApp.swift; sourceTree = "<group>"; };
+		B590C47328DC97AC00804A82 /* Frontpage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frontpage.swift; sourceTree = "<group>"; };
+		B590C47728DC97C400804A82 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,9 +55,11 @@
 		B590C45428DC81CD00804A82 /* Radverkehr */ = {
 			isa = PBXGroup;
 			children = (
-				B590C45528DC81CD00804A82 /* RadverkehrApp.swift */,
-				B590C45728DC81CD00804A82 /* ContentView.swift */,
 				B590C45928DC81D000804A82 /* Assets.xcassets */,
+				B590C47128DC97AC00804A82 /* ContentView.swift */,
+				B590C47328DC97AC00804A82 /* Frontpage.swift */,
+				B590C47228DC97AC00804A82 /* RadverkehrApp.swift */,
+				B590C47728DC97C400804A82 /* WebView.swift */,
 				B590C45B28DC81D000804A82 /* Preview Content */,
 			);
 			path = Radverkehr;
@@ -99,6 +105,7 @@
 				TargetAttributes = {
 					B590C45128DC81CD00804A82 = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -137,8 +144,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B590C45828DC81CD00804A82 /* ContentView.swift in Sources */,
-				B590C45628DC81CD00804A82 /* RadverkehrApp.swift in Sources */,
+				B590C47628DC97AC00804A82 /* Frontpage.swift in Sources */,
+				B590C47828DC97C400804A82 /* WebView.swift in Sources */,
+				B590C47428DC97AC00804A82 /* ContentView.swift in Sources */,
+				B590C47528DC97AC00804A82 /* RadverkehrApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,6 +273,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Radverkehr/Preview Content\"";
@@ -283,6 +293,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "b-lass.Radverkehr";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -293,6 +304,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Radverkehr/Preview Content\"";
