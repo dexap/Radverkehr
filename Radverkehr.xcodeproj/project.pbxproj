@@ -13,6 +13,10 @@
 		B590C47528DC97AC00804A82 /* RadverkehrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47228DC97AC00804A82 /* RadverkehrApp.swift */; };
 		B590C47628DC97AC00804A82 /* Frontpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47328DC97AC00804A82 /* Frontpage.swift */; };
 		B590C47828DC97C400804A82 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47728DC97C400804A82 /* WebView.swift */; };
+		B590C47A28DC9AA500804A82 /* MeldungenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47928DC9AA500804A82 /* MeldungenView.swift */; };
+		B590C47C28DC9B2100804A82 /* MeldungDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47B28DC9B2100804A82 /* MeldungDetailsView.swift */; };
+		B590C47E28DC9D7500804A82 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47D28DC9D7500804A82 /* ListItem.swift */; };
+		B590C48028DCA3C800804A82 /* MeldungenResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47F28DCA3C800804A82 /* MeldungenResponseModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +27,10 @@
 		B590C47228DC97AC00804A82 /* RadverkehrApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadverkehrApp.swift; sourceTree = "<group>"; };
 		B590C47328DC97AC00804A82 /* Frontpage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frontpage.swift; sourceTree = "<group>"; };
 		B590C47728DC97C400804A82 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
+		B590C47928DC9AA500804A82 /* MeldungenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungenView.swift; sourceTree = "<group>"; };
+		B590C47B28DC9B2100804A82 /* MeldungDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungDetailsView.swift; sourceTree = "<group>"; };
+		B590C47D28DC9D7500804A82 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		B590C47F28DCA3C800804A82 /* MeldungenResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungenResponseModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,8 +66,12 @@
 				B590C45928DC81D000804A82 /* Assets.xcassets */,
 				B590C47128DC97AC00804A82 /* ContentView.swift */,
 				B590C47328DC97AC00804A82 /* Frontpage.swift */,
+				B590C47928DC9AA500804A82 /* MeldungenView.swift */,
+				B590C47D28DC9D7500804A82 /* ListItem.swift */,
+				B590C47B28DC9B2100804A82 /* MeldungDetailsView.swift */,
 				B590C47228DC97AC00804A82 /* RadverkehrApp.swift */,
 				B590C47728DC97C400804A82 /* WebView.swift */,
+				B590C47F28DCA3C800804A82 /* MeldungenResponseModel.swift */,
 				B590C45B28DC81D000804A82 /* Preview Content */,
 			);
 			path = Radverkehr;
@@ -144,9 +156,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B590C47C28DC9B2100804A82 /* MeldungDetailsView.swift in Sources */,
+				B590C47E28DC9D7500804A82 /* ListItem.swift in Sources */,
 				B590C47628DC97AC00804A82 /* Frontpage.swift in Sources */,
 				B590C47828DC97C400804A82 /* WebView.swift in Sources */,
+				B590C47A28DC9AA500804A82 /* MeldungenView.swift in Sources */,
 				B590C47428DC97AC00804A82 /* ContentView.swift in Sources */,
+				B590C48028DCA3C800804A82 /* MeldungenResponseModel.swift in Sources */,
 				B590C47528DC97AC00804A82 /* RadverkehrApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

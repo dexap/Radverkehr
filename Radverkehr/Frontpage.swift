@@ -17,24 +17,32 @@ struct Frontpage: View {
 
 
             ZStack {
-                Circle()
-                    .stroke()
-                    .foregroundColor(Color("purple"))
-                    .shadow(color: .accentColor ,radius: 3)
-                    .overlay {
-                        Image(systemName: "bicycle")
-                            .resizable()
-                            .frame(width: 70,height: 45, alignment: .center)
-                            .scaledToFit()
-                            .foregroundColor(Color("purple"))
-                    }
-            }
-            .frame(width: 100, height: 100, alignment: .center)
 
-            Text("weiter")
-                .foregroundColor(.accentColor)
-                .fontWeight(.heavy)
-                .font(.system(size: 30))
+                Button {
+                    MeldungenView()
+                } label: {
+                    VStack{
+                        Circle()
+                            .stroke()
+                            .foregroundColor(Color("purple"))
+                            .shadow(color: .accentColor ,radius: 3)
+                            .overlay {
+                                Image(systemName: "bicycle")
+                                    .resizable()
+                                    .frame(width: 70,height: 45, alignment: .center)
+                                    .scaledToFit()
+                                    .foregroundColor(Color("purple"))
+                            }
+                            .frame(width: 100, height: 100, alignment: .center)
+                        Text("weiter")
+                            .foregroundColor(.accentColor)
+                            .fontWeight(.heavy)
+                            .font(.system(size: 30))
+                    }
+                }
+            }
+
+
 
             Spacer()
 
