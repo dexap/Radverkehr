@@ -1,16 +1,8 @@
-//
-//  ContentView.swift
-//  Radverkehr
-//
-//  Created by Benjamin Lassmann on 22.09.22.
-//
-
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        Frontpage()
     }
 }
 
