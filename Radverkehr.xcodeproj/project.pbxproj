@@ -15,8 +15,14 @@
 		B590C47828DC97C400804A82 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47728DC97C400804A82 /* WebView.swift */; };
 		B590C47A28DC9AA500804A82 /* MeldungenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47928DC9AA500804A82 /* MeldungenView.swift */; };
 		B590C47C28DC9B2100804A82 /* MeldungDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47B28DC9B2100804A82 /* MeldungDetailsView.swift */; };
-		B590C47E28DC9D7500804A82 /* ListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47D28DC9D7500804A82 /* ListItem.swift */; };
+		B590C47E28DC9D7500804A82 /* MeldungListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47D28DC9D7500804A82 /* MeldungListItem.swift */; };
 		B590C48028DCA3C800804A82 /* MeldungenResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47F28DCA3C800804A82 /* MeldungenResponseModel.swift */; };
+		B590C48228DCAC7000804A82 /* MeldungenResponseHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C48128DCAC7000804A82 /* MeldungenResponseHandler.swift */; };
+		B590C48628DD832A00804A82 /* Projekte.json in Resources */ = {isa = PBXBuildFile; fileRef = B590C48528DD832A00804A82 /* Projekte.json */; };
+		B590C48D28DD98EF00804A82 /* ModelData.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C48C28DD98EF00804A82 /* ModelData.swift */; };
+		B590C49228DDB49100804A82 /* BerlinTypeOffice-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B590C49028DDB49100804A82 /* BerlinTypeOffice-Regular.ttf */; };
+		B590C49328DDB49100804A82 /* BerlinTypeOffice-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B590C49128DDB49100804A82 /* BerlinTypeOffice-Bold.ttf */; };
+		B590C49628DDB68D00804A82 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C49528DDB68D00804A82 /* FontManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +35,15 @@
 		B590C47728DC97C400804A82 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
 		B590C47928DC9AA500804A82 /* MeldungenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungenView.swift; sourceTree = "<group>"; };
 		B590C47B28DC9B2100804A82 /* MeldungDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungDetailsView.swift; sourceTree = "<group>"; };
-		B590C47D28DC9D7500804A82 /* ListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListItem.swift; sourceTree = "<group>"; };
+		B590C47D28DC9D7500804A82 /* MeldungListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungListItem.swift; sourceTree = "<group>"; };
 		B590C47F28DCA3C800804A82 /* MeldungenResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungenResponseModel.swift; sourceTree = "<group>"; };
+		B590C48128DCAC7000804A82 /* MeldungenResponseHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungenResponseHandler.swift; sourceTree = "<group>"; };
+		B590C48528DD832A00804A82 /* Projekte.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Projekte.json; sourceTree = "<group>"; };
+		B590C48C28DD98EF00804A82 /* ModelData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelData.swift; sourceTree = "<group>"; };
+		B590C49028DDB49100804A82 /* BerlinTypeOffice-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BerlinTypeOffice-Regular.ttf"; sourceTree = "<group>"; };
+		B590C49128DDB49100804A82 /* BerlinTypeOffice-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "BerlinTypeOffice-Bold.ttf"; sourceTree = "<group>"; };
+		B590C49428DDB57B00804A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		B590C49528DDB68D00804A82 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,15 +76,20 @@
 		B590C45428DC81CD00804A82 /* Radverkehr */ = {
 			isa = PBXGroup;
 			children = (
+				B590C49428DDB57B00804A82 /* Info.plist */,
 				B590C45928DC81D000804A82 /* Assets.xcassets */,
 				B590C47128DC97AC00804A82 /* ContentView.swift */,
 				B590C47328DC97AC00804A82 /* Frontpage.swift */,
 				B590C47928DC9AA500804A82 /* MeldungenView.swift */,
-				B590C47D28DC9D7500804A82 /* ListItem.swift */,
+				B590C47D28DC9D7500804A82 /* MeldungListItem.swift */,
 				B590C47B28DC9B2100804A82 /* MeldungDetailsView.swift */,
 				B590C47228DC97AC00804A82 /* RadverkehrApp.swift */,
 				B590C47728DC97C400804A82 /* WebView.swift */,
 				B590C47F28DCA3C800804A82 /* MeldungenResponseModel.swift */,
+				B590C48128DCAC7000804A82 /* MeldungenResponseHandler.swift */,
+				B590C49528DDB68D00804A82 /* FontManager.swift */,
+				B590C48528DD832A00804A82 /* Projekte.json */,
+				B590C48E28DDB43D00804A82 /* Fonts */,
 				B590C45B28DC81D000804A82 /* Preview Content */,
 			);
 			path = Radverkehr;
@@ -81,8 +99,26 @@
 			isa = PBXGroup;
 			children = (
 				B590C45C28DC81D000804A82 /* Preview Assets.xcassets */,
+				B590C48C28DD98EF00804A82 /* ModelData.swift */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		B590C48E28DDB43D00804A82 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				B590C48F28DDB49100804A82 /* Berlin */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		B590C48F28DDB49100804A82 /* Berlin */ = {
+			isa = PBXGroup;
+			children = (
+				B590C49028DDB49100804A82 /* BerlinTypeOffice-Regular.ttf */,
+				B590C49128DDB49100804A82 /* BerlinTypeOffice-Bold.ttf */,
+			);
+			path = Berlin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -101,6 +137,8 @@
 			dependencies = (
 			);
 			name = Radverkehr;
+			packageProductDependencies = (
+			);
 			productName = Radverkehr;
 			productReference = B590C45228DC81CD00804A82 /* Radverkehr.app */;
 			productType = "com.apple.product-type.application";
@@ -145,6 +183,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B590C45D28DC81D000804A82 /* Preview Assets.xcassets in Resources */,
+				B590C49228DDB49100804A82 /* BerlinTypeOffice-Regular.ttf in Resources */,
+				B590C48628DD832A00804A82 /* Projekte.json in Resources */,
+				B590C49328DDB49100804A82 /* BerlinTypeOffice-Bold.ttf in Resources */,
 				B590C45A28DC81D000804A82 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -157,11 +198,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				B590C47C28DC9B2100804A82 /* MeldungDetailsView.swift in Sources */,
-				B590C47E28DC9D7500804A82 /* ListItem.swift in Sources */,
+				B590C47E28DC9D7500804A82 /* MeldungListItem.swift in Sources */,
 				B590C47628DC97AC00804A82 /* Frontpage.swift in Sources */,
 				B590C47828DC97C400804A82 /* WebView.swift in Sources */,
 				B590C47A28DC9AA500804A82 /* MeldungenView.swift in Sources */,
+				B590C48228DCAC7000804A82 /* MeldungenResponseHandler.swift in Sources */,
+				B590C49628DDB68D00804A82 /* FontManager.swift in Sources */,
 				B590C47428DC97AC00804A82 /* ContentView.swift in Sources */,
+				B590C48D28DD98EF00804A82 /* ModelData.swift in Sources */,
 				B590C48028DCA3C800804A82 /* MeldungenResponseModel.swift in Sources */,
 				B590C47528DC97AC00804A82 /* RadverkehrApp.swift in Sources */,
 			);
@@ -296,6 +340,7 @@
 				DEVELOPMENT_TEAM = L7XKF6M92U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Radverkehr/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -327,6 +372,7 @@
 				DEVELOPMENT_TEAM = L7XKF6M92U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Radverkehr/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

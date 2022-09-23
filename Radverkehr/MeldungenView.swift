@@ -1,29 +1,24 @@
-//
-//  MeldungenView.swift
-//  Radverkehr
-//
-//  Created by Benjamin Lassmann on 22.09.22.
-//
-
 import SwiftUI
 
 struct MeldungenView: View {
+    let handler = MeldungenResponseHandler()
+    @State var meldungen: MeldungenResponseModel?
+
     var body: some View {
 
-        NavigationView{
-            List{
-                NavigationLink {
-                    MeldungDetailsView()
-                } label: {
-                    ListItem()
+            if let meldungen = meldungen {
+                List(meldungen.results, id: \.self.id) { meldung in
+                    NavigationLink {
+                        MeldungDetailsView(meldung: meldung)
+                    } label: {
+                        MeldungListItem(title: meldung.title, subtitle: meldung.subtitle, status: meldung.status ?? .vorgesehen)
+                    }
                 }
-
+            } else {
+                ProgressView().task {
+                    meldungen = handler.getLocal()
+                }
             }
-
-
-
-            .navigationTitle("Aktuelles")
-        }
     }
 }
 
