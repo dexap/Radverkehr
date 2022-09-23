@@ -103,15 +103,18 @@ struct MeldungDetailsView: View {
                                 default:         background.foregroundColor(.gray)
                             }
                         }
-                        .offset(x: 50, y: 155)
+                        .offset(x: 20, y: 90)
                     Spacer()
                 }
-            }.padding(.bottom)
+            }
 
             // Details
             Text(meldung.subtitle)
-                .fontWeight(.heavy)
-                .padding(.vertical, 10)
+                .font(.title3)
+                .fontWeight(.bold)
+                .padding(.horizontal)
+                .lineLimit(3)
+                .minimumScaleFactor(0.1)
 
             ScrollView(.vertical, showsIndicators: false) {
                 Text(meldung.description)
@@ -127,9 +130,6 @@ struct MeldungDetailsView: View {
                         .shadow(color: .accentColor, radius: 5)
 
                 }
-
-
-
             Spacer()
         }
     }
@@ -138,7 +138,7 @@ struct MeldungDetailsView: View {
 
 struct MeldungDetailsView_Previews: PreviewProvider {
     static var previews: some View {
-        MeldungDetailsView(meldung: previewModel.results[3])
+        MeldungDetailsView(meldung: previewModel.results[0])
     }
 }
 
