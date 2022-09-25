@@ -3,32 +3,8 @@ import Foundation
 
 class MeldungenResponseHandler: ObservableObject {
 
-    var parsedJSON: MeldungenResponseModel?
-
-    func readLocalJSONFile() -> Data? {
-        do {
-            if let filePath = Bundle.main.path(forResource: "Projekte", ofType: "json") {
-                let fileUrl = URL(fileURLWithPath: filePath)
-                let data = try Data(contentsOf: fileUrl)
-                return data
-            }
-        } catch {
-            print("error: \(error)")
-        }
-        return nil
-    }
-
-    func parseJSONtoMeldungResponseModel(data: Data) throws -> MeldungenResponseModel? {
-        let decoder = JSONDecoder()
-        do {
-            return try decoder.decode(MeldungenResponseModel.self, from: data)
-        } catch {
-            print(error)
-        }
-        print("error Parsing JSON")
-        return nil
-    }
-
+    @Published private var _isLoading = false
+    var isLoading: Bool { get {_isLoading} }
 
 
     func getLocal() -> MeldungenResponseModel? {
@@ -54,17 +30,18 @@ class MeldungenResponseHandler: ObservableObject {
     }
 
 
-
-
-    func get() async throws -> MeldungenResponseModel?  {
+    var result: MeldungenResponseModel?
+    func getData() async throws -> MeldungenResponseModel?  {
         if let url = URL(string: "https://www.infravelo.de/api/v1/projects/") {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data {
                     let jsonDecoder = JSONDecoder()
                     do {
-                        self.parsedJSON = try jsonDecoder.decode(MeldungenResponseModel.self, from: data)
-                        print(self.parsedJSON?.results ?? "no data")
-                        } catch {
+                        self.result = try jsonDecoder.decode(MeldungenResponseModel.self, from: data)
+                        if let result = self.result {
+                            self.result = result
+                        }
+                    } catch {
                         print(error)
                     }
                 }
@@ -72,6 +49,18 @@ class MeldungenResponseHandler: ObservableObject {
         } else {
             fatalError("Fetching URL error")
         }
-        return parsedJSON as MeldungenResponseModel?
+        return result
+    }
+
+    func get() async throws -> MeldungenResponseModel? {
+        do{
+            _isLoading = true
+            result = try await getData()
+            _isLoading = false
+            return result
+        }catch {
+            print(error)
+        }
+        return nil
     }
 }

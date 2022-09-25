@@ -25,7 +25,7 @@ struct MeldungListItem: View {
                 Text(title)
                     .font(.title2)
                     .bold()
-                    .foregroundColor(.accentColor)
+                    .foregroundColor(Color("purple"))
                     .lineLimit(3)
                 Text(subtitle)
                     .lineLimit(3)

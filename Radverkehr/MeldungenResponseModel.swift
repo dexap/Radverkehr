@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct MeldungenResponseModel: Codable {
+class MeldungenResponseModel: Codable {
 
     let results: [Results]
 

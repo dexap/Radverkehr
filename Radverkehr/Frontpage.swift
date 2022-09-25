@@ -1,6 +1,8 @@
 import SwiftUI
 
 struct Frontpage: View {
+
+    @EnvironmentObject var handler: MeldungenResponseHandler
     @State var isShowingWebView = false
 
     var body: some View {
@@ -14,8 +16,6 @@ struct Frontpage: View {
                     .font(.system(size: 50))
                     .lineLimit(3)
 
-
-
                 ZStack {
                     NavigationLink {
                         MeldungenView()
@@ -24,7 +24,7 @@ struct Frontpage: View {
                                 Circle()
                                     .stroke()
                                     .foregroundColor(Color("purple"))
-                                    .shadow(color: .accentColor ,radius: 3)
+                                    .shadow(color: Color("purple") ,radius: 3)
                                     .overlay {
                                         Image(systemName: "bicycle")
                                             .resizable()
@@ -34,7 +34,7 @@ struct Frontpage: View {
                                     }
                                     .frame(width: 100, height: 100, alignment: .center)
                                 Text("weiter")
-                                    .foregroundColor(.accentColor)
+                                    .foregroundColor(Color("purple"))
                                     .fontWeight(.heavy)
                                     .font(.system(size: 30))
                             
@@ -52,7 +52,8 @@ struct Frontpage: View {
                             .bold()
                         Image(systemName: "rectangle.portrait.and.arrow.right")
                     }
-                    .padding()
+                    .padding(.horizontal, 30)
+                    .foregroundColor(Color("purple"))
                     Spacer()
                 }
             }
@@ -61,7 +62,6 @@ struct Frontpage: View {
             }
             .navigationBarHidden(true)
         }
-
     }
 }
 

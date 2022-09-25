@@ -20,8 +20,7 @@ struct MeldungDetailsView: View {
                                         .resizable()
                                         .scaledToFill()
                                 } placeholder: {
-                                    Color
-                                        .accentColor
+                                    Color("purple")
                                         .opacity(0.2)
                                         .overlay{
                                             ProgressView()
@@ -36,7 +35,7 @@ struct MeldungDetailsView: View {
                     .overlay {
                         Circle()
                             .stroke(lineWidth: 3)
-                            .foregroundColor(.accentColor)
+                            .foregroundColor(Color("purple"))
                             .shadow(radius: 5)
                     }
                 } else {
@@ -47,7 +46,7 @@ struct MeldungDetailsView: View {
                                 .resizable()
                                 .scaledToFill()
                         } placeholder: {
-                            Color.accentColor.opacity(0.2)
+                            Color.init("purple").opacity(0.2)
                                 .overlay {
                                     ProgressView()
                                 }
@@ -65,30 +64,30 @@ struct MeldungDetailsView: View {
                     }
                 }
 
-            Text(meldung.title)
-                .foregroundColor(.black)
-                .opacity(0.8)
-                .font(Font.custom(FontManager.BerlinFont.bold, size: 20))
-                .padding(5)
-                .lineLimit(2)
-                .minimumScaleFactor(0.1)
-                .overlay {
-                    RoundedRectangle(cornerRadius: 3)
-                        .stroke(lineWidth: 3)
-                        .fill(RadialGradient(
-                            colors: [
-                                Color(red: 0.6, green: 0.6, blue: 0.6),
-                                Color(red: 0.1, green: 0.1, blue: 0.1)],
-                            center: .center,
-                            startRadius: 0,
-                            endRadius: 200))
-                        .shadow(radius: 5)
-                }
-                .background {
-                    RoundedRectangle(cornerRadius: 3)
-                        .foregroundColor(.white)
-                }
-                .offset(x: 0, y: -130)
+                Text(meldung.title)
+                    .foregroundColor(.black)
+                    .opacity(0.8)
+                    .font(Font.custom(FontManager.BerlinFont.bold, size: 20))
+                    .padding(5)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.1)
+                    .overlay {
+                        RoundedRectangle(cornerRadius: 3)
+                            .stroke(lineWidth: 3)
+                            .fill(RadialGradient(
+                                colors: [
+                                    Color(red: 0.6, green: 0.6, blue: 0.6),
+                                    Color(red: 0.1, green: 0.1, blue: 0.1)],
+                                center: .center,
+                                startRadius: 0,
+                                endRadius: 200))
+                            .shadow(radius: 5)
+                    }
+                    .background {
+                        RoundedRectangle(cornerRadius: 3)
+                            .foregroundColor(.white)
+                    }
+                    .offset(x: 0, y: -130)
 
                 HStack {
                     Text("Status: \(meldung.status?.rawValue ?? "unbekannt")")
@@ -108,7 +107,6 @@ struct MeldungDetailsView: View {
                 }
             }
 
-            // Details
             Text(meldung.subtitle)
                 .font(.title3)
                 .fontWeight(.bold)
@@ -121,15 +119,15 @@ struct MeldungDetailsView: View {
                     .opacity(0.8)
                     .padding(.vertical,8)
             }
-                .padding(.horizontal, 30)
-                .background {
-                    RoundedRectangle(cornerRadius: 5)
-                        .foregroundColor(.accentColor)
-                        .opacity(0.2)
-                        .padding(.horizontal)
-                        .shadow(color: .accentColor, radius: 5)
+            .padding(.horizontal, 30)
+            .background {
+                RoundedRectangle(cornerRadius: 5)
+                    .foregroundColor(Color("purple"))
+                    .opacity(0.2)
+                    .padding(.horizontal)
+                    .shadow(color: Color("purple"), radius: 5)
 
-                }
+            }
             Spacer()
         }
     }

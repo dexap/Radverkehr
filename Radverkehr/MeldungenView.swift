@@ -5,6 +5,11 @@ struct MeldungenView: View {
     @State var meldungen: MeldungenResponseModel?
 
     var body: some View {
+        ZStack{
+
+            if handler.isLoading {
+                // TODO: isLoading abfragen und Seite laden lassen
+            }
             if let meldungen = meldungen {
                 List(meldungen.results, id: \.self.id) { meldung in
                     NavigationLink {
@@ -13,15 +18,18 @@ struct MeldungenView: View {
                         MeldungListItem(title: meldung.title, subtitle: meldung.subtitle, status: meldung.status ?? .vorgesehen)
                     }
                     .navigationTitle("Aktuelles")
-                    .ignoresSafeArea(edges: .top)
-
                 }
             } else {
-                ProgressView().task {
-                    meldungen = handler.getLocal()
+                LoadingView().task {
+                    do {
+                        meldungen = try await handler.get()
+                    } catch {
+                        print(error)
+                    }
                 }
-                .foregroundColor(.accentColor)
+                .foregroundColor(Color("purple"))
             }
+        }
     }
 }
 
