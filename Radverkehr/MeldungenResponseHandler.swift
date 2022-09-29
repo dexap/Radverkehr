@@ -3,10 +3,6 @@ import Foundation
 
 class MeldungenResponseHandler: ObservableObject {
 
-    @Published private var _isLoading = false
-    var isLoading: Bool { get {_isLoading} }
-
-
     func getLocal() -> MeldungenResponseModel? {
         guard let path = Bundle.main.path(forResource: "Projekte", ofType: "json") else {return nil}
         let url = URL(fileURLWithPath: path)
@@ -29,9 +25,9 @@ class MeldungenResponseHandler: ObservableObject {
         return nil
     }
 
-
+    // API Call
     var result: MeldungenResponseModel?
-    func getData() async throws -> MeldungenResponseModel?  {
+    private func getData() async throws -> MeldungenResponseModel?  {
         if let url = URL(string: "https://www.infravelo.de/api/v1/projects/") {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data {
@@ -52,11 +48,10 @@ class MeldungenResponseHandler: ObservableObject {
         return result
     }
 
+
     func get() async throws -> MeldungenResponseModel? {
         do{
-            _isLoading = true
             result = try await getData()
-            _isLoading = false
             return result
         }catch {
             print(error)
