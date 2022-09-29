@@ -6,10 +6,6 @@ struct MeldungenView: View {
 
     var body: some View {
         ZStack{
-
-            if handler.isLoading {
-                // TODO: isLoading abfragen und Seite laden lassen
-            }
             if let meldungen = meldungen {
                 List(meldungen.results, id: \.self.id) { meldung in
                     NavigationLink {
