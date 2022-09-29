@@ -16,14 +16,13 @@ struct MeldungenView: View {
                     .navigationTitle("Aktuelles")
                 }
             } else {
-                LoadingView().task {
+                ProgressView().task {
                     do {
                         meldungen = try await handler.get()
                     } catch {
                         print(error)
                     }
                 }
-                .foregroundColor(Color("purple"))
             }
         }
     }
