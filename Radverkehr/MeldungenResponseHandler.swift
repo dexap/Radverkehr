@@ -3,9 +3,6 @@ import Foundation
 
 class MeldungenResponseHandler: ObservableObject {
 
-    @Published private var _isLoading = false
-    var isLoading: Bool { get {_isLoading} }
-
 
     func getLocal() -> MeldungenResponseModel? {
         guard let path = Bundle.main.path(forResource: "Projekte", ofType: "json") else {return nil}
@@ -54,9 +51,7 @@ class MeldungenResponseHandler: ObservableObject {
 
     func get() async throws -> MeldungenResponseModel? {
         do{
-            _isLoading = true
             result = try await getData()
-            _isLoading = false
             return result
         }catch {
             print(error)

@@ -18,7 +18,7 @@ struct Frontpage: View {
 
                 ZStack {
                     NavigationLink {
-                        MeldungenView()
+                        MeldungenListView()
                     } label: {
                             VStack{
                                 Circle()

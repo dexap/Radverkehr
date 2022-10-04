@@ -7,9 +7,13 @@
 
 import Foundation
 
-class MeldungenResponseModel: Codable {
+class MeldungenResponseModel: Codable, ObservableObject {
 
     let results: [Results]
+
+    struct District: Codable {
+        let name: String
+    }
 
     struct WebImage: Codable {
         let uri: String
@@ -25,6 +29,7 @@ class MeldungenResponseModel: Codable {
         let owner: String
         let image: WebImage?
         let imagesBefore: [WebImage?]
+        let districts: [District]
     }
 
     enum Status: String, Codable {

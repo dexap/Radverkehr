@@ -3,15 +3,13 @@ import SwiftUI
 
 struct MeldungListItem: View {
 
-    let title: String
-    let subtitle: String
-    let status: MeldungenResponseModel.Status
+    @State var meldung: MeldungenResponseModel.Results
 
     var body: some View {
         HStack {
-
-            let circle = Circle().frame(width: 25, height: 25, alignment: .center)
-            switch (status) {
+            let circle = Circle()
+                .frame(width: 25, height: 25, alignment: .center)
+            switch (meldung.status) {
                 case .inPlanung: circle.foregroundColor(.yellow)
                 case .abgeschlossen: circle.foregroundColor(.green)
                 case .inBau: circle.foregroundColor(.blue)
@@ -22,12 +20,12 @@ struct MeldungListItem: View {
 
                 
             VStack(alignment: .leading){
-                Text(title)
+                Text(meldung.title)
                     .font(.title2)
                     .bold()
                     .foregroundColor(Color("purple"))
                     .lineLimit(3)
-                Text(subtitle)
+                Text(meldung.subtitle)
                     .lineLimit(3)
                     .font(.caption)
             }
@@ -38,6 +36,6 @@ struct MeldungListItem: View {
 
 struct MeldungListItem_Previews: PreviewProvider {
     static var previews: some View {
-        MeldungListItem(title: "Frankfurter Allee", subtitle: "Sperrung auf der Frankfurter Allee. Zum Umfahren nutzen die sie Storkower Strasse", status: MeldungenResponseModel.Status.inPlanung )
+        MeldungListItem(meldung: previewModel.results[0])
     }
 }

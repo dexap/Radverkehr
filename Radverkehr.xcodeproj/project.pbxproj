@@ -13,7 +13,7 @@
 		B590C47528DC97AC00804A82 /* RadverkehrApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47228DC97AC00804A82 /* RadverkehrApp.swift */; };
 		B590C47628DC97AC00804A82 /* Frontpage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47328DC97AC00804A82 /* Frontpage.swift */; };
 		B590C47828DC97C400804A82 /* WebView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47728DC97C400804A82 /* WebView.swift */; };
-		B590C47A28DC9AA500804A82 /* MeldungenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47928DC9AA500804A82 /* MeldungenView.swift */; };
+		B590C47A28DC9AA500804A82 /* MeldungenListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47928DC9AA500804A82 /* MeldungenListView.swift */; };
 		B590C47C28DC9B2100804A82 /* MeldungDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47B28DC9B2100804A82 /* MeldungDetailsView.swift */; };
 		B590C47E28DC9D7500804A82 /* MeldungListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47D28DC9D7500804A82 /* MeldungListItem.swift */; };
 		B590C48028DCA3C800804A82 /* MeldungenResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C47F28DCA3C800804A82 /* MeldungenResponseModel.swift */; };
@@ -24,6 +24,7 @@
 		B590C49328DDB49100804A82 /* BerlinTypeOffice-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B590C49128DDB49100804A82 /* BerlinTypeOffice-Bold.ttf */; };
 		B590C49628DDB68D00804A82 /* FontManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B590C49528DDB68D00804A82 /* FontManager.swift */; };
 		B5E94D1B28DF47D800E467B3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E94D1A28DF47D800E467B3 /* LoadingView.swift */; };
+		B5E94D1D28E0AA9300E467B3 /* InternetConnectionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5E94D1C28E0AA9300E467B3 /* InternetConnectionManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,7 +35,7 @@
 		B590C47228DC97AC00804A82 /* RadverkehrApp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RadverkehrApp.swift; sourceTree = "<group>"; };
 		B590C47328DC97AC00804A82 /* Frontpage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Frontpage.swift; sourceTree = "<group>"; };
 		B590C47728DC97C400804A82 /* WebView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebView.swift; sourceTree = "<group>"; };
-		B590C47928DC9AA500804A82 /* MeldungenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungenView.swift; sourceTree = "<group>"; };
+		B590C47928DC9AA500804A82 /* MeldungenListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungenListView.swift; sourceTree = "<group>"; };
 		B590C47B28DC9B2100804A82 /* MeldungDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungDetailsView.swift; sourceTree = "<group>"; };
 		B590C47D28DC9D7500804A82 /* MeldungListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungListItem.swift; sourceTree = "<group>"; };
 		B590C47F28DCA3C800804A82 /* MeldungenResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeldungenResponseModel.swift; sourceTree = "<group>"; };
@@ -46,6 +47,7 @@
 		B590C49428DDB57B00804A82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		B590C49528DDB68D00804A82 /* FontManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontManager.swift; sourceTree = "<group>"; };
 		B5E94D1A28DF47D800E467B3 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		B5E94D1C28E0AA9300E467B3 /* InternetConnectionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternetConnectionManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,7 +84,7 @@
 				B590C45928DC81D000804A82 /* Assets.xcassets */,
 				B590C47128DC97AC00804A82 /* ContentView.swift */,
 				B590C47328DC97AC00804A82 /* Frontpage.swift */,
-				B590C47928DC9AA500804A82 /* MeldungenView.swift */,
+				B590C47928DC9AA500804A82 /* MeldungenListView.swift */,
 				B590C47D28DC9D7500804A82 /* MeldungListItem.swift */,
 				B590C47B28DC9B2100804A82 /* MeldungDetailsView.swift */,
 				B590C47228DC97AC00804A82 /* RadverkehrApp.swift */,
@@ -91,6 +93,7 @@
 				B590C48128DCAC7000804A82 /* MeldungenResponseHandler.swift */,
 				B5E94D1A28DF47D800E467B3 /* LoadingView.swift */,
 				B590C49528DDB68D00804A82 /* FontManager.swift */,
+				B5E94D1C28E0AA9300E467B3 /* InternetConnectionManager.swift */,
 				B590C48528DD832A00804A82 /* Projekte.json */,
 				B590C48E28DDB43D00804A82 /* Fonts */,
 				B590C45B28DC81D000804A82 /* Preview Content */,
@@ -204,7 +207,7 @@
 				B590C47E28DC9D7500804A82 /* MeldungListItem.swift in Sources */,
 				B590C47628DC97AC00804A82 /* Frontpage.swift in Sources */,
 				B590C47828DC97C400804A82 /* WebView.swift in Sources */,
-				B590C47A28DC9AA500804A82 /* MeldungenView.swift in Sources */,
+				B590C47A28DC9AA500804A82 /* MeldungenListView.swift in Sources */,
 				B5E94D1B28DF47D800E467B3 /* LoadingView.swift in Sources */,
 				B590C48228DCAC7000804A82 /* MeldungenResponseHandler.swift in Sources */,
 				B590C49628DDB68D00804A82 /* FontManager.swift in Sources */,
@@ -212,6 +215,7 @@
 				B590C48D28DD98EF00804A82 /* ModelData.swift in Sources */,
 				B590C48028DCA3C800804A82 /* MeldungenResponseModel.swift in Sources */,
 				B590C47528DC97AC00804A82 /* RadverkehrApp.swift in Sources */,
+				B5E94D1D28E0AA9300E467B3 /* InternetConnectionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

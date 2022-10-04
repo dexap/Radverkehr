@@ -53,6 +53,12 @@ struct MeldungDetailsView: View {
                         }
                         .frame(width: 300, height: 300, alignment: .center)
                         .clipShape(Circle())
+                        .overlay {
+                            Circle()
+                                .stroke(lineWidth: 3)
+                                .foregroundColor(Color("purple"))
+                                .shadow(radius: 5)
+                        }
                     } else {
 
                         // Wenn es kein Image oder ImageSet gibt
@@ -61,33 +67,58 @@ struct MeldungDetailsView: View {
                             .scaledToFill()
                             .frame(width: 300, height: 300, alignment: .center)
                             .clipShape(Circle())
+                            .overlay {
+                                Circle()
+                                    .stroke(lineWidth: 3)
+                                    .foregroundColor(Color("purple"))
+                                    .shadow(radius: 5)
+                            }
                     }
                 }
 
-                Text(meldung.title)
-                    .foregroundColor(.black)
-                    .opacity(0.8)
-                    .font(Font.custom(FontManager.BerlinFont.bold, size: 20))
-                    .padding(5)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.1)
-                    .overlay {
-                        RoundedRectangle(cornerRadius: 3)
-                            .stroke(lineWidth: 3)
-                            .fill(RadialGradient(
-                                colors: [
-                                    Color(red: 0.6, green: 0.6, blue: 0.6),
-                                    Color(red: 0.1, green: 0.1, blue: 0.1)],
-                                center: .center,
-                                startRadius: 0,
-                                endRadius: 200))
-                            .shadow(radius: 5)
+
+                VStack(alignment: .center, spacing: 0.6) {
+
+                    VStack(alignment: .leading) {
+                        ForEach(0..<meldung.districts.count) { index in
+                            Text("# " + meldung.districts[index].name)
+                        }
                     }
+                    .foregroundColor(Color("purple"))
+                    .padding(.horizontal, 5)
                     .background {
-                        RoundedRectangle(cornerRadius: 3)
-                            .foregroundColor(.white)
+                        RoundedRectangle(cornerRadius: 10)
+                        RoundedRectangle(cornerRadius: 10)
+                            .stroke(lineWidth: 1)
+                            .foregroundColor(Color("purple"))
                     }
-                    .offset(x: 0, y: -130)
+
+
+                    Text(meldung.title)
+                        .foregroundColor(.black)
+                        .opacity(0.8)
+                        .font(Font.custom(FontManager.BerlinFont.bold, size: 20))
+                        .padding(5)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.1)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 3)
+                                .stroke(lineWidth: 3)
+                                .fill(RadialGradient(
+                                    colors: [
+                                        Color(red: 0.6, green: 0.6, blue: 0.6),
+                                        Color(red: 0.1, green: 0.1, blue: 0.1)],
+                                    center: .center,
+                                    startRadius: 0,
+                                    endRadius: 200))
+                                .shadow(radius: 5)
+                        }
+                        .background {
+                            RoundedRectangle(cornerRadius: 3)
+                                .foregroundColor(.white)
+                        }
+                }
+                .offset(x: 0, y: -130)
 
                 HStack {
                     Text("Status: \(meldung.status?.rawValue ?? "unbekannt")")
