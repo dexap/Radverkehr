@@ -1,17 +1,13 @@
 import SwiftUI
 
-struct MeldungenView: View {
+struct MeldungenListView: View {
     let handler = MeldungenResponseHandler()
-    @State var meldungen: MeldungenResponseModel?
+    @ObservedObject var meldungen: MeldungenResponseModel?
 
     var body: some View {
         ZStack{
-
-            if handler.isLoading {
-                // TODO: isLoading abfragen und Seite laden lassen
-            }
             if let meldungen = meldungen {
-                List(meldungen.results, id: \.self.id) { meldung in
+                List(meldungen.results, id: \.self) { meldung in
                     NavigationLink {
                         MeldungDetailsView(meldung: meldung)
                     } label: {
@@ -22,7 +18,11 @@ struct MeldungenView: View {
             } else {
                 LoadingView().task {
                     do {
-                        meldungen = try await handler.get()
+                        if InternetConnectionManager.isConnectedToNetwork() {
+                            meldungen = try await handler.get()
+                        } else {
+                            meldungen = handler.getLocal()
+                        }
                     } catch {
                         print(error)
                     }
@@ -35,6 +35,6 @@ struct MeldungenView: View {
 
 struct MeldungenView_Previews: PreviewProvider {
     static var previews: some View {
-        MeldungenView()
+        MeldungenListView()
     }
 }
