@@ -19,6 +19,8 @@ struct Frontpage: View {
                 ZStack {
                     NavigationLink {
                         MeldungenListView()
+                            .navigationTitle("Aktuelles")
+                            .navigationBarTitleDisplayMode(.large)
                     } label: {
                             VStack{
                                 Circle()
@@ -52,7 +54,7 @@ struct Frontpage: View {
                             .bold()
                         Image(systemName: "rectangle.portrait.and.arrow.right")
                     }
-                    .padding(.horizontal, 30)
+                    .padding(30)
                     .foregroundColor(Color("purple"))
                     Spacer()
                 }
@@ -60,7 +62,7 @@ struct Frontpage: View {
             .sheet(isPresented: $isShowingWebView) {
                 WebView(url: URL(string: "https://www.infravelo.de")!)
             }
-            .navigationBarHidden(true)
+
         }
     }
 }

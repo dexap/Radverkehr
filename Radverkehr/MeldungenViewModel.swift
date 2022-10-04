@@ -7,7 +7,7 @@
 
 import Foundation
 
-class MeldungenResponseModel: Codable, ObservableObject {
+class MeldungenViewModel: Codable, ObservableObject {
 
     let results: [Results]
 

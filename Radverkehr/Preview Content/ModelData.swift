@@ -7,7 +7,7 @@
 
 import Foundation
 
-var previewModel: MeldungenResponseModel = load("Projekte.json")
+var previewModel: MeldungenViewModel = load("Projekte.json")
 
 func load<T: Decodable>(_ filename: String) -> T {
     let data: Data

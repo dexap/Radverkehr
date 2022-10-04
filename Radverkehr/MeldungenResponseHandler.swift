@@ -4,14 +4,14 @@ import Foundation
 class MeldungenResponseHandler: ObservableObject {
 
 
-    func getLocal() -> MeldungenResponseModel? {
+    func getLocal() -> MeldungenViewModel? {
         guard let path = Bundle.main.path(forResource: "Projekte", ofType: "json") else {return nil}
         let url = URL(fileURLWithPath: path)
 
-        var result: MeldungenResponseModel?
+        var result: MeldungenViewModel?
         do{
             let data = try Data(contentsOf: url)
-            result = try JSONDecoder().decode(MeldungenResponseModel.self, from: data)
+            result = try JSONDecoder().decode(MeldungenViewModel.self, from: data)
 
             if let result = result {
                 return result
@@ -27,14 +27,15 @@ class MeldungenResponseHandler: ObservableObject {
     }
 
 
-    var result: MeldungenResponseModel?
-    func getData() async throws -> MeldungenResponseModel?  {
+    @Published private(set) var result: MeldungenViewModel?
+
+    func getData() async throws -> MeldungenViewModel?  {
         if let url = URL(string: "https://www.infravelo.de/api/v1/projects/") {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data {
                     let jsonDecoder = JSONDecoder()
                     do {
-                        self.result = try jsonDecoder.decode(MeldungenResponseModel.self, from: data)
+                        self.result = try jsonDecoder.decode(MeldungenViewModel.self, from: data)
                         if let result = self.result {
                             self.result = result
                         }
@@ -49,7 +50,7 @@ class MeldungenResponseHandler: ObservableObject {
         return result
     }
 
-    func get() async throws -> MeldungenResponseModel? {
+    func get() async throws -> MeldungenViewModel? {
         do{
             result = try await getData()
             return result

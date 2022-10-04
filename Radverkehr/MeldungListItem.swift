@@ -3,7 +3,7 @@ import SwiftUI
 
 struct MeldungListItem: View {
 
-    @State var meldung: MeldungenResponseModel.Results
+    @State var meldung: MeldungenViewModel.Results
 
     var body: some View {
         HStack {

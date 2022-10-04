@@ -2,7 +2,7 @@ import SwiftUI
 
 struct MeldungenListView: View {
     let handler = MeldungenResponseHandler()
-    @State var meldungen: MeldungenResponseModel?
+    @State var meldungen: MeldungenViewModel?
 
     var body: some View {
 
@@ -11,26 +11,29 @@ struct MeldungenListView: View {
                 List(meldungen.results, id: \.self.id) { meldung in
                     NavigationLink {
                         MeldungDetailsView(meldung: meldung)
+                            .navigationBarBackButtonHidden(false)
                     } label: {
                         MeldungListItem(meldung: meldung)
                     }
-                    .navigationTitle("Aktuelles")
+
                 }}
 
         } else {
             LoadingView().task {
-                do {
-                    if InternetConnectionManager.isConnectedToNetwork() {
-                        meldungen = try await handler.get()
-                    } else {
-                        meldungen = handler.getLocal()
-                    }
-                } catch {
-                    print(error)
-                }
+                meldungen = handler.getLocal()
+//                do {
+//                    if InternetConnectionManager.isConnectedToNetwork() {
+//                        meldungen = try await handler.get()
+//                    } else {
+//                        meldungen = handler.getLocal()
+//                    }
+//                } catch {
+//                    print(error)
+//                }
             }
             .foregroundColor(Color("purple"))
         }
+
     }
 }
 
