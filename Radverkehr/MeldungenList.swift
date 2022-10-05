@@ -1,14 +1,12 @@
 import SwiftUI
 
-struct MeldungenListView: View {
-    let handler = MeldungenResponseHandler()
-    @State var meldungen: MeldungenViewModel?
+struct MeldungenList: View {
 
     var body: some View {
 
         if let meldungen = meldungen {
             ZStack{
-                List(meldungen.results, id: \.self.id) { meldung in
+                List(meldungen.result, id: \.self.id) { meldung in
                     NavigationLink {
                         MeldungDetailsView(meldung: meldung)
                             .navigationBarBackButtonHidden(false)
@@ -40,6 +38,6 @@ struct MeldungenListView: View {
 
 struct MeldungenView_Previews: PreviewProvider {
     static var previews: some View {
-        MeldungenListView()
+        MeldungenList()
     }
 }
