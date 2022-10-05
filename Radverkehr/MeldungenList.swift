@@ -1,35 +1,18 @@
 import SwiftUI
 
 struct MeldungenList: View {
+    @ObservedObject var viewModel: MeldungenViewModel
 
     var body: some View {
-
-        if let meldungen = meldungen {
-            ZStack{
-                List(meldungen.result, id: \.self.id) { meldung in
-                    NavigationLink {
-                        MeldungDetailsView(meldung: meldung)
-                            .navigationBarBackButtonHidden(false)
-                    } label: {
-                        MeldungListItem(meldung: meldung)
-                    }
-
-                }}
-
-        } else {
-            LoadingView().task {
-                meldungen = handler.getLocal()
-//                do {
-//                    if InternetConnectionManager.isConnectedToNetwork() {
-//                        meldungen = try await handler.get()
-//                    } else {
-//                        meldungen = handler.getLocal()
-//                    }
-//                } catch {
-//                    print(error)
-//                }
+        List(viewModel.meldungen.result, id: \.id) { meldung in
+            NavigationLink {
+                MeldungenList(viewModel: viewModel)
+            } label: {
+                MeldungenList(viewModel: viewModel)
             }
-            .foregroundColor(Color("purple"))
+        }
+        .refreshable {
+            await viewModel.reload()
         }
 
     }
@@ -38,6 +21,6 @@ struct MeldungenList: View {
 
 struct MeldungenView_Previews: PreviewProvider {
     static var previews: some View {
-        MeldungenList()
+        MeldungenList(viewModel: .init(model: previewModel))
     }
 }

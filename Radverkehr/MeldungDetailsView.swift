@@ -3,7 +3,7 @@ import SwiftUI
 
 struct MeldungDetailsView: View {
 
-    var meldung: MeldungenViewModel.Results
+    var meldung: MeldungenModel.Results
 
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {

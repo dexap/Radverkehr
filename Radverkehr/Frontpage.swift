@@ -18,7 +18,7 @@ struct Frontpage: View {
 
                 ZStack {
                     NavigationLink {
-                        MeldungenListView()
+                        MeldungenList(viewModel: previewModel)
                             .navigationTitle("Aktuelles")
                             .navigationBarTitleDisplayMode(.large)
                     } label: {

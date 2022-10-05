@@ -3,15 +3,14 @@ import Foundation
 
 class MeldungenResponseHandler: ObservableObject {
 
-
-    func getLocal() -> MeldungenViewModel? {
+    func getLocal() -> MeldungenModel? {
         guard let path = Bundle.main.path(forResource: "Projekte", ofType: "json") else {return nil}
         let url = URL(fileURLWithPath: path)
 
-        var result: MeldungenViewModel?
+        var result: MeldungenModel?
         do{
             let data = try Data(contentsOf: url)
-            result = try JSONDecoder().decode(MeldungenViewModel.self, from: data)
+            result = try JSONDecoder().decode(MeldungenModel.self, from: data)
 
             if let result = result {
                 return result
@@ -27,18 +26,13 @@ class MeldungenResponseHandler: ObservableObject {
     }
 
 
-    @Published private(set) var result: MeldungenViewModel?
-
-    func getData() async throws -> MeldungenViewModel?  {
+    func getData() async throws -> MeldungenModel? {
+        var model: MeldungenModel = .init(result: previewModel.result)
         if let url = URL(string: "https://www.infravelo.de/api/v1/projects/") {
             URLSession.shared.dataTask(with: url) { data, response, error in
                 if let data = data {
-                    let jsonDecoder = JSONDecoder()
                     do {
-                        self.result = try jsonDecoder.decode(MeldungenViewModel.self, from: data)
-                        if let result = self.result {
-                            self.result = result
-                        }
+                        model = try JSONDecoder().decode(MeldungenModel.self, from: data)
                     } catch {
                         print(error)
                     }
@@ -47,16 +41,7 @@ class MeldungenResponseHandler: ObservableObject {
         } else {
             fatalError("Fetching URL error")
         }
-        return result
+        return model
     }
 
-    func get() async throws -> MeldungenViewModel? {
-        do{
-            result = try await getData()
-            return result
-        }catch {
-            print(error)
-        }
-        return nil
-    }
 }
